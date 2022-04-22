@@ -5,7 +5,7 @@ $(document).ready(function () {
     let $wrap = $('.wrapper');
     $navBtn.on('click', () => {
         $navBtn.toggleClass('cross');
-        $wrap.toggleClass('main')
+        // $wrap.toggleClass('main')
         $navMenuItems.toggleClass('show')
 
     })
@@ -25,18 +25,18 @@ $(document).ready(function () {
         let $currentScroll = window.pageYOffset || $('body').scrollTop || 0;
         let $scrollDirection = $currentScroll < $lastScroll;
         let $toggle = $scrolled && $scrollDirection;
-        $scrolled = $currentScroll > 0;
-        $header.toggleClass('active', $toggle);
+        $scrolled = $currentScroll > 100;
+        $header.toggleClass('sticky', $toggle);
         $lastScroll = $currentScroll;
 
 
         // counter animation when page scroll down 
-        var counted = 0;
-        var count = $('#counter').offset().top - window.innerHeight;
+        let counted = 0;
+        let count = $('#counter').offset().top - window.innerHeight;
         // console.log($('#counter').offset().top);
         if (counted == 0 && $(window).scrollTop() > count) {
             $('.percent').each(function () {
-                var $this = $(this),
+                let $this = $(this),
                     countTo = $this.attr('data-count');
                 $({
                     countNum: $this.text()
@@ -70,6 +70,7 @@ $(document).ready(function () {
 
 });
 
+// On page scroll text content move up with animation
 function animatation() {
     let animates = document.querySelectorAll(".animate");
 
@@ -85,8 +86,45 @@ function animatation() {
         }
     }
 }
-
 window.addEventListener("scroll", animatation);
 
 
 
+// Image slide show
+let current = 0,
+    main = document.getElementById('mainSlider')
+    slides = document.querySelectorAll('.slider');
+    slideImg = document.querySelectorAll('.overlay');
+
+function slideShow() {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.cssText = `
+        visibility: hidden; 
+        opacity : 0; height:0;
+        transition : opacity 3s, height 3s;
+    `
+        for(let j =0; j<slideImg.length; j++){
+            slides[i].style.cssText = 
+            `
+                visibility: hidden;  
+                opacity : 0; height:0;
+                transition : opacity 3s, height 3s;
+            `
+        }
+    }
+    current = (current != slides.length - 1) ? current + 1 : 0;
+    current = (current != slideImg.length - 1) ? current + 1 : 0;
+    slides[current].style.cssText = `
+        visibility: visible;
+        opacity: 1;
+        height: 430px;
+    `
+    slideImg[current].style.cssText = `
+        visibility: visible;
+        opacity: 1;
+        height: 300px;
+    `
+
+};
+
+main.addEventListener("wheel", slideShow)
