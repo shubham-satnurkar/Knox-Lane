@@ -1,0 +1,13 @@
+@font-face {
+	font-family: "IvyPresto Disp Thi";
+	font-display: swap;
+	font-weight: normal;
+	font-style: normal;
+	
+	src: url("//fonts/IvyPrestoDisplay-Thin.eot");
+        src: url("../fonts/IvyPrestoDisplay-Thin-1.eot") format("embedded-opentype"),
+             url("../fonts/IvyPrestoDisplay-Thin.woff2") format("woff2"),
+             url("../fonts/IvyPrestoDisplay-Thin.woff") format("woff");
+
+}
+

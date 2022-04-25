@@ -1,3 +1,5 @@
+@import './base.css';
+
 *,
 *::after,
 *::before {
@@ -10,6 +12,7 @@
     scroll-behavior: smooth;
 }
 
+
 .wrapper {
     overflow: hidden;
 }
@@ -18,6 +21,7 @@
     max-width: 1140px;
     margin: auto;
     padding: 0 15px;
+    
 }
 
 
@@ -176,12 +180,12 @@
 }
 
 .header .navbar-nav .nav-item .nav-link {
-    font-size: 3rem;
-    font-weight: 300;
+    font-size: 3.25rem;
+    font-weight: 400;
     text-decoration: none;
     line-height: auto;
     color: #000;
-    font-family: cursive;
+    font-family: "IvyPresto Disp Thi";
 }
 
 .header .navbar-nav .nav-item .nav-link:hover {
@@ -235,6 +239,8 @@
 
 #collapseMenu.show .nav-item .nav-link {
     animation: menu-up ease 2s forwards;
+    font-family: "IvyPresto Disp Thi";
+    font-weight: 500;
 }
 
 @keyframes menu-up {
@@ -265,22 +271,35 @@
 }
 
 .hero-heading {
-    font-size: 5.5rem;
+    font-size: 6rem;
+    width: 50%;
     position: relative;
     top: 50%;
     color: #fff;
     left: 30px;
-    line-height: 5.5rem;
+    line-height: 6rem;
     font-weight: 100;
     display: flex;
     flex-direction: column;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "IvyPresto Disp Thi";
     animation: drop-up 1s ease 200ms forwards;
 }
+/* .hero-heading::after{
+    content: '';position: absolute;
+    bottom:25%;left: 250px;
+    width: 50px; height: 1px;
+    background-color: #fff;
+} */
 
 .hero-heading span+span {
     color: #ebeabe;
     animation: drop-up 1s ease 200ms forwards;
+}
+.hero-heading span+span::after{
+    content: '';position: absolute;
+    top: 45px;left: 250px;
+    width: 55px; border: 1px solid #fff;
+    display: block;
 }
 
 @keyframes drop-up {
@@ -318,12 +337,12 @@
 
 .about-us__text,
 .parterne-compnaies__text {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     width: 75%;
     font-weight: 100;
     padding: 10px 0;
     color: #101010;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "IvyPresto Disp Thi";
     transition: 1s;
 }
 
@@ -498,8 +517,8 @@
 
 .our-journey .heading {
     font-size: 4rem;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 100;
+    font-family: "IvyPresto Disp Thi";
+    font-weight: 300;
     margin-bottom: 30px;
 }
 
@@ -531,6 +550,7 @@
     padding: 15px 0;
     position: relative;
     margin-bottom: 50px;
+    font-family: sans-serif;font-weight: 600;
 }
 
 .our-journey .content .details .main-text::before {
@@ -568,6 +588,7 @@
     color: #000;
     font-weight: 500;
     margin-bottom: 20px;
+    font-family: sans-serif;
 }
 
 .our-journey .content .details .list-group {
@@ -575,20 +596,27 @@
 }
 
 .our-journey .content .details .list-group .list-item {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .our-journey .content .details .list-group .list-item .count {
     font-size: 5rem;
     display: block;
     font-weight: normal;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "IvyPresto Disp Thi";
     position: relative;
+    margin-left: 25px; line-height: 4rem;
+}
+.our-journey .content .details .list-group .list-item .para{
+    font-size: 1rem; font-family: sans-serif; font-weight: normal;
+    margin-left: 25px;
 }
 
-.our-journey .content .details .list-group .list-item .count::before {
+.our-journey .content .details .list-group .list-item::before {
     content: '';
-    position: absolute;
+    position: absolute; display: block;
+    width: 1px;height: 20%;border: 1px solid rgba(0, 0, 0, .3);
+    
 }
 
 /* Our Journey Section End */
@@ -677,13 +705,14 @@
     width: 40%;
     font-size: 2.5rem;
     font-weight: normal;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "IvyPresto Disp Thi";
 }
 
 .img-slider .slider .heading .text {
     width: 70%;
     font-size: .875rem;
     line-height: 20px;
+    font-family: sans-serif;font-weight: normal;
 }
 
 .img-slider .slider .slide-img .overlay {
@@ -720,6 +749,7 @@
     color: #fff;
     font-weight: 600;
     text-decoration: none;
+    font-family: sans-serif; font-weight: 600;
 }
 
 .img-slider .slider .slide-img .overlay .arrow {
@@ -806,7 +836,7 @@
     position: relative;
     text-decoration: none;
     width: 50%;
-    margin: auto;
+    margin: auto; font-family: sans-serif; font-weight: 500;
 }
 
 .portfolio .heading .title::before,
@@ -852,7 +882,7 @@
 .portfolio .scrolling-text .text {
     white-space: nowrap;
     font-size: 5rem;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "IvyPresto Disp Thi";
     font-weight: lighter;
 }
 
@@ -893,7 +923,7 @@
     border-radius: 50%;
     top: 25%;
     right: 35%;
-    font-size: 1.25rem;
+    font-size: 1.25rem; font-family: sans-serif;
     font-weight: 500;
     cursor: pointer;
     transition: transform .5s;
@@ -926,8 +956,9 @@
 .news-media__title {
     font-size: .875rem;
     color: #fff;
-    padding: 15px 0;
+    padding: 15px 0;font-family: sans-serif;font-weight: 500;
     border-top: 1px solid rgba(255, 255, 255, .3);
+    margin-bottom: 20px;
 }
 
 .news-block {
@@ -945,9 +976,10 @@
 }
 
 .news-block .block .block-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #fff;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "IvyPresto Disp Thi";
+    font-weight: 300;
     line-height: 50px;
 }
 
@@ -1068,11 +1100,11 @@ footer .container {
 
 .footer .footer-blocks .sec2 .foot-item .foot-link {
     font-size: 4rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: "IvyPresto Disp Thi";
     text-decoration: none;
     padding: 5px;
     color: #fff;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .footer .copyright {
@@ -1084,6 +1116,7 @@ footer .container {
     font-size: 1rem;
     font-weight: 500;
     font-family: sans-serif;
+    font-weight: 500;
     text-transform: uppercase;
     margin-bottom: 20px;
 }
@@ -1097,7 +1130,8 @@ footer .container {
 
 .footer .copyright .social .legal {
     font-size: 1rem;
-    color: #fff;
+    color: #fff; font-family: sans-serif;
+    font-weight: 500;
     text-decoration: none;
 }
 
@@ -1105,6 +1139,8 @@ footer .container {
     font-size: 1rem;
     color: #fff;
     text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 300;
     margin-left: 15px;
     text-transform: uppercase;
     position: relative;
