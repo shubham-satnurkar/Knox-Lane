@@ -2,18 +2,19 @@ $(document).ready(function () {
     let $navBtn = $('#collapseBtn');
     let $header = $('#hero-header');
     let $navMenuItems = $('#collapseMenu');
-    let $wrap = $('.wrapper');
     $navBtn.on('click', () => {
         $navBtn.toggleClass('cross');
-        // $wrap.toggleClass('main')
         $navMenuItems.toggleClass('show')
-
+        
+        $('#hero-background').toggleClass('main')
     })
 
     if ($(window).scrollTop > 0) {
         $(window).animate({
             'transition': '500ms',
         }, 1000)
+
+        
     }
 
 
@@ -29,6 +30,7 @@ $(document).ready(function () {
         $header.toggleClass('sticky', $toggle);
         $lastScroll = $currentScroll;
 
+        
 
         // counter animation when page scroll down 
         let counted = 0;
@@ -128,3 +130,13 @@ function slideShow() {
 };
 
 main.addEventListener("wheel", slideShow)
+
+let mobile = window.matchMedia("width: 767px");
+function change(e){
+    if(e.matches){
+        main.removeEventListener("wheel", slideShow);
+        alert("hello")
+    }
+}
+
+mobile.addEventListener('window.resize()', change)

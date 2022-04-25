@@ -14,8 +14,10 @@
 
 
 .wrapper {
-    overflow: hidden;
+    overflow: hidden;width: 100%;
+    height: auto;position: relative;
 }
+
 
 .container {
     max-width: 1140px;
@@ -45,11 +47,12 @@
 /* Hero background image section start */
 #hero-background {
     background: #231620 url(../img/background.jpg) no-repeat center right;
-    background-size: cover;
-
+    background-size: 100% 100%;
+    height: 740px;
     position: relative;
     transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+#hero-background .img-fluid{width: 100%;position: absolute;height: 700px;}
 
 .header {
     width: 100%;
@@ -87,6 +90,7 @@
 
 }
 
+
 .header .navbar {
     display: flex;
     justify-content: space-between;
@@ -112,7 +116,7 @@
 .header .navbar .contact-menu .link {
     font-size: 1rem;
     color: #fff;
-    margin-right: 10px;
+    margin-right: 20px;
     text-decoration: none;
     padding: 10px;
 }
@@ -120,7 +124,7 @@
 .header .navbar .contact-menu .menu-btn {
     height: 41px;
     pointer-events: auto;
-    position: relative;
+    position: sticky;
     width: 41px;
     background-color: transparent;
     border: none;
@@ -152,6 +156,8 @@
     transition: border-color .6s ease-out, top .2s ease-out .35s, transform .4s ease-out;
 }
 
+
+
 #collapseMenu {
     background-color: #ebeabe;
     width: 0%;
@@ -166,7 +172,7 @@
 
 }
 
-.header .navbar-nav {
+#collapseMenu .navbar-nav {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
@@ -175,11 +181,11 @@
 
 }
 
-.header .navbar-nav .nav-item {
+#collapseMenu .navbar-nav .nav-item {
     opacity: .5;
 }
 
-.header .navbar-nav .nav-item .nav-link {
+#collapseMenu .navbar-nav .nav-item .nav-link {
     font-size: 3.25rem;
     font-weight: 400;
     text-decoration: none;
@@ -188,15 +194,15 @@
     font-family: "IvyPresto Disp Thi";
 }
 
-.header .navbar-nav .nav-item .nav-link:hover {
+#collapseMenu .navbar-nav .nav-item .nav-link:hover {
     color: rgba(0, 0, 0, .4);
 }
 
-.header .navbar-nav .investor-login {
+#collapseMenu .navbar-nav .investor-login {
     margin-top: 60px;
 }
 
-.header .navbar-nav .investor-login .title {
+#collapseMenu .navbar-nav .investor-login .title {
     font-size: 1.25rem;
     text-transform: uppercase;
     border-bottom: 1px solid #000;
@@ -204,11 +210,11 @@
     margin-bottom: 50px;
 }
 
-.header .navbar-nav .investor-login .list-item {
+#collapseMenu .navbar-nav .investor-login .list-item {
     margin: 10px 0;
 }
 
-.header .navbar-nav .investor-login .list-item .link {
+#collapseMenu .navbar-nav .investor-login .list-item .link {
     padding: 10px 0;
     color: #000;
     text-decoration: none;
@@ -219,7 +225,8 @@
 #collapseMenu.show {
     right: 0;
     width: 50%;
-    transition: 1s;
+    transition: 1s;position: fixed;
+    height: 100vh;
     z-index: 100;
     visibility: visible;
 }
@@ -255,6 +262,7 @@
     }
 }
 
+
 .cross::before {
     transform: rotate(45deg) translate(5px, 0);
     border-color: #000 !important;
@@ -272,11 +280,11 @@
 
 .hero-heading {
     font-size: 6rem;
-    width: 50%;
+    padding: 350px 0 100px 30px;
     position: relative;
-    top: 50%;
+    /* top: 50%; */
     color: #fff;
-    left: 30px;
+    /* left: 30px; */
     line-height: 6rem;
     font-weight: 100;
     display: flex;
@@ -284,12 +292,7 @@
     font-family: "IvyPresto Disp Thi";
     animation: drop-up 1s ease 200ms forwards;
 }
-/* .hero-heading::after{
-    content: '';position: absolute;
-    bottom:25%;left: 250px;
-    width: 50px; height: 1px;
-    background-color: #fff;
-} */
+
 
 .hero-heading span+span {
     color: #ebeabe;
@@ -315,6 +318,11 @@
         overflow-y: visible;
     }
 }
+
+@media screen and (max-width:991px) {
+    
+}
+
 
 /* Hero background image section end */
 
@@ -1164,3 +1172,77 @@ footer .container {
 }
 
 /* Footer section end */
+
+
+
+@media screen and (max-width:1084px) {
+    .hero-heading{font-size: 5rem;padding: 300px 0 0 30px;}
+    .hero-heading span+span::after {
+        top: 50px;left: 200px;width: 55px;
+    }
+    #collapseMenu.show {width: 75%;}
+
+    .learn-more .btn .btn-learn::before{margin-left: -10px;}
+    .learn-more .btn .btn-learn::after{right: 45px;}
+    .animate.active .learn-more .animate-arrow::before,.animate.active .scroll-more .animate-arrow::before {width: 100%;top: 110px;  right: 7px; }
+
+}
+
+@media screen and (max-width:991px) {
+    .about-us__text, .parterne-compnaies__text {font-size: 2rem;   width: 100%; }
+    .learn-more, .scroll-more {justify-content: space-around;  flex-wrap: nowrap;}
+    .animate.active .learn-more .animate-arrow::before, .animate.active .scroll-more .animate-arrow::before {
+        top: 132px;right: -42px;
+    }
+    .animate.active .learn-more .animate-arrow .icon::after, .animate.active .scroll-more .animate-arrow .icon::after {width: 50%;}
+    
+    .animate.active .learn-more .animate-arrow .icon::before, .animate.active .scroll-more .animate-arrow .icon::before {width: 50%;bottom: 50px;right: -50px;}
+
+    .our-journey .heading{font-size: 3rem;}
+    .our-journey .content .details .main-text{font-size: 1rem;}
+    .our-journey .content .details .list-group .list-item .count{font-size: 4rem;}
+
+    .img-slider .slider .heading{padding: 0 15px;}
+
+    .portfolio .scrolling-text .text-reverse, .portfolio .scrolling-text .text-forward{font-size: 4rem;}
+
+    .news-block{flex-direction: column;flex-wrap: wrap;}
+    .news-block .block{width: 100%; flex:  0 0 100%;margin-bottom: 30px;}
+}   
+
+@media screen and (max-width:767px){
+    #collapseMenu.show{width: 100%;}
+    .our-journey .content .img,.our-journey .content .details{width: 100%;height: auto;margin-bottom: 20px;overflow: unset;}
+    .our-journey .content .details .main-text{font-size: 1.25rem;}
+    .about-us, .parterne-compnaies{padding: 50px 0 60px;}
+
+    .footer .footer-blocks .sec1 .logo{font-size: 2rem;}
+    .footer .footer-blocks .sec2 .foot-item .foot-link{font-size: 2rem;}
+    .footer .copyright-text{font-size: .875rem;}
+}
+
+@media screen and (max-width:575px){
+    #hero-background{height: 550px;}
+    .hero-heading{font-size: 3rem;padding: 200px 0 0 20px;line-height: inherit;}
+    .hero-heading span+span::after{left: 130px;width: 30px;top: 35px;}
+    .header .navbar .contact-menu .link{display: none;}
+    #collapseMenu{padding: 200px 50px 50px;}
+    #collapseMenu .navbar-nav .investor-login{margin-top: 0;}
+    #collapseMenu.show .nav-item{height: 50px;}
+    #collapseMenu .navbar-nav .nav-item .nav-link{font-size: 2rem;line-height: inherit;}
+    .learn-more, .scroll-more{justify-content: space-between;}
+    .learn-more .animate-arrow, .scroll-more .animate-arrow{width: 45%;}
+    .learn-more .btn{margin-left: 20px;}
+    .animate.active .learn-more .animate-arrow::before, .animate.active .scroll-more .animate-arrow::before{
+        width: 80%;top: 128px; right: 17px;
+    }
+    .portfolio .scrolling-text .text-reverse, .portfolio .scrolling-text .text-forward{font-size: 3rem;}
+    .portfolio .scrolling-text .contact-us-btn{top: 0;width: 150px;height: 150px;font-size: 1rem;}
+
+    .about-us__text, .parterne-compnaies__text{font-size: 1.5rem;}
+
+    .learn-more .animate-arrow, .scroll-more .animate-arrow{width: 55%;}
+    .animate.active .learn-more .animate-arrow::before, .animate.active .scroll-more .animate-arrow::before{
+        top: 136px;right: -9px;
+    }
+}
