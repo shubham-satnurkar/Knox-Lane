@@ -139,4 +139,4 @@ function change(e){
     }
 }
 
-mobile.addEventListener('window.resize()', change)
+mobile.addEventListener('resize', change)

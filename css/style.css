@@ -1208,6 +1208,10 @@ footer .container {
 
     .news-block{flex-direction: column;flex-wrap: wrap;}
     .news-block .block{width: 100%; flex:  0 0 100%;margin-bottom: 30px;}
+
+    .animate.active .learn-more .animate-arrow::before, .animate.active .scroll-more .animate-arrow::before{
+        top: 130px;right: 12px;width: 80%;
+    }
 }   
 
 @media screen and (max-width:767px){
@@ -1216,9 +1220,18 @@ footer .container {
     .our-journey .content .details .main-text{font-size: 1.25rem;}
     .about-us, .parterne-compnaies{padding: 50px 0 60px;}
 
+    /* .img-slider{height: unset;position: static;}
+    .img-slider .slider{position: static;overflow: unset;} */
+    .img-slider .slider .slide-img .overlay .brand-logo,.img-slider .slider .slide-img .overlay .arrow{width: 150xp;height: 150px;}
+
     .footer .footer-blocks .sec1 .logo{font-size: 2rem;}
     .footer .footer-blocks .sec2 .foot-item .foot-link{font-size: 2rem;}
     .footer .copyright-text{font-size: .875rem;}
+
+    .our-journey{overflow: unset;}
+    .animate.active .learn-more .animate-arrow::before, .animate.active .scroll-more .animate-arrow::before{
+        top: 145px;right: -35px;width: 80%;
+    }
 }
 
 @media screen and (max-width:575px){
@@ -1244,5 +1257,34 @@ footer .container {
     .learn-more .animate-arrow, .scroll-more .animate-arrow{width: 55%;}
     .animate.active .learn-more .animate-arrow::before, .animate.active .scroll-more .animate-arrow::before{
         top: 136px;right: -9px;
+    }
+    .our-journey .content .img{min-height: unset;}
+    .img-slider .slider .heading{flex-direction: column;justify-content: flex-start;align-items: flex-start;}
+    .img-slider .slider .heading .title{width: 100%;}
+    .img-slider .slider .heading .text{width: 100%;}
+
+    .footer .footer-blocks{display: block;}
+    .footer .footer-blocks .sec{width: 100%;margin-bottom: 20px;}
+    .footer .footer-blocks .sec2{padding: 0;}
+
+    .portfolio .heading .title, .news-media .heading .title{width: 100%;font-size: 1rem;}
+    .portfolio .scrolling-text .text-reverse, .portfolio .scrolling-text .text-forward{font-size: 2rem;}
+    .portfolio .scrolling-text .contact-us-btn{width: 100px;height: 100px;right: 10%;font-size: .875rem;}
+    .portfolio .scrolling-text .contact-us-btn .img-fluid{bottom: 15px;}
+
+    .news-block .block .block-title{font-size: 1.5rem;line-height: 30px;}
+
+    .animate.active .learn-more .animate-arrow::before, .animate.active .scroll-more .animate-arrow::before{
+        top: 133px;right: 75px;width: 60%;
+    }
+
+
+
+}
+
+
+@media screen and (max-width:425px) {
+    .animate.active .learn-more .animate-arrow::before, .animate.active .scroll-more .animate-arrow::before{
+        top: 135px;right: -7px;width: 80%;
     }
 }
