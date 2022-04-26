@@ -2,11 +2,13 @@ $(document).ready(function () {
     let $navBtn = $('#collapseBtn');
     let $header = $('#hero-header');
     let $navMenuItems = $('#collapseMenu');
+    let $wrapper = $('.wrapper');
     $navBtn.on('click', () => {
         $navBtn.toggleClass('cross');
         $navMenuItems.toggleClass('show')
         
-        $('#hero-background').toggleClass('main')
+        $('#hero-background').toggleClass('main');
+        $wrapper.toggleClass('blur')
     })
 
     if ($(window).scrollTop > 0) {
@@ -64,11 +66,6 @@ $(document).ready(function () {
         }
 
     });
-
-
-
-
-
 
 });
 
