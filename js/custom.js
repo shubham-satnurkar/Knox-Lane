@@ -2,10 +2,12 @@ $(document).ready(function () {
     let $navBtn = $('#collapseBtn');
     let $header = $('#hero-header');
     let $navMenuItems = $('#collapseMenu');
+    let $navbar =$('#navbar')
     let $wrapper = $('.wrapper');
     $navBtn.on('click', () => {
         $navBtn.toggleClass('cross');
         $navMenuItems.toggleClass('show')
+        $navbar.toggleClass('reveal')
         
         $('#hero-background').toggleClass('main');
         $wrapper.toggleClass('blur')
@@ -37,8 +39,8 @@ $(document).ready(function () {
         // counter animation when page scroll down 
         let counted = 0;
         let count = $('#counter').offset().top - window.innerHeight;
-        // console.log($('#counter').offset().top);
-        if (counted == 0 && $(window).scrollTop() > count) {
+        console.log($('#counter').offset().top);
+        if (counted == 0 && $(window).scrollTop() >= count) {
             $('.percent').each(function () {
                 let $this = $(this),
                     countTo = $this.attr('data-count');
@@ -49,9 +51,9 @@ $(document).ready(function () {
                 },
 
                     {
-                        delay: 100,
+                        delay: 0,
                         duration: 2000,
-                        easing: 'swing',
+                        // easing: 'swing',
                         step: function () {
                             $this.text(Math.floor(this.countNum));
                         },
@@ -130,6 +132,7 @@ main.addEventListener("wheel", slideShow)
 
 let mobile = window.matchMedia("width: 767px");
 function change(e){
+    main = document.getElementById('mainSlider')
     if(e.matches){
         main.removeEventListener("wheel", slideShow);
         alert("hello")
