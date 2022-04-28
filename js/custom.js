@@ -39,7 +39,7 @@ $(document).ready(function () {
         // counter animation when page scroll down 
         let counted = 0;
         let count = $('#counter').offset().top - window.innerHeight;
-        console.log($('#counter').offset().top);
+        // console.log($('#counter').offset().top);
         if (counted == 0 && $(window).scrollTop() >= count) {
             $('.percent').each(function () {
                 let $this = $(this),
@@ -99,44 +99,28 @@ let current = 0,
 
 function slideShow() {
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.cssText = `
-        visibility: hidden; 
-        opacity : 0; height:0;
-        transition : opacity 3s, height 3s;
-    `
+        slides[i].classList.add('hidden')
+        slides[i].classList.remove('visible')
+
         for(let j =0; j<slideImg.length; j++){
-            slides[i].style.cssText = 
-            `
-                visibility: hidden;  
-                opacity : 0; height:0;
-                transition : opacity 3s, height 3s;
-            `
+            slides[i].classList.add('hidden')
+            slides[i].classList.remove('visible')
         }
     }
     current = (current != slides.length - 1) ? current + 1 : 0;
     current = (current != slideImg.length - 1) ? current + 1 : 0;
-    slides[current].style.cssText = `
-        visibility: visible;
-        opacity: 1;
-        height: 430px;
-    `
-    slideImg[current].style.cssText = `
-        visibility: visible;
-        opacity: 1;
-        height: 300px;
-    `
+    slides[current].classList.remove('hidden')
+    slideImg[current].classList.remove('hidden')
+    slides[current].classList.add('visible')
+    slideImg[current].classList.add('visible')
 
 };
 
 main.addEventListener("wheel", slideShow)
 
-let mobile = window.matchMedia("width: 767px");
-function change(e){
-    main = document.getElementById('mainSlider')
-    if(e.matches){
-        main.removeEventListener("wheel", slideShow);
-        alert("hello")
-    }
-}
 
-mobile.addEventListener('resize', change)
+let mobile = window.matchMedia('(max-width:767px)');
+if(mobile.matches){
+    main.removeEventListener("wheel", slideShow);
+    alert("slider event remove");
+}
