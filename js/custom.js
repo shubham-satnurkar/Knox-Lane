@@ -2,15 +2,16 @@ $(document).ready(function () {
     let $navBtn = $('#collapseBtn');
     let $header = $('#hero-header');
     let $navMenuItems = $('#collapseMenu');
-    let $navbar =$('#navbar')
+    let $navbar = $('#navbar')
     let $wrapper = $('.wrapper');
     $navBtn.on('click', () => {
         $navBtn.toggleClass('cross');
         $navMenuItems.toggleClass('show')
         $navbar.toggleClass('reveal')
-        
+
         $('#hero-background').toggleClass('main');
-        $wrapper.toggleClass('blur')
+        $wrapper.toggleClass('blur');
+        $('body').toggleClass('overflow');
     })
 
     if ($(window).scrollTop > 0) {
@@ -18,7 +19,7 @@ $(document).ready(function () {
             'transition': '500ms',
         }, 1000)
 
-        
+
     }
 
 
@@ -34,38 +35,33 @@ $(document).ready(function () {
         $header.toggleClass('sticky', $toggle);
         $lastScroll = $currentScroll;
 
-        
+
 
         // counter animation when page scroll down 
-        let counted = 0;
-        let count = $('#counter').offset().top - window.innerHeight;
-        // console.log($('#counter').offset().top);
-        if (counted == 0 && $(window).scrollTop() >= count) {
-            $('.percent').each(function () {
-                let $this = $(this),
-                    countTo = $this.attr('data-count');
-                $({
-                    countNum: $this.text()
-                }).animate({
-                    countNum: countTo
-                },
+        $('.percent').each(function () {
+            let $this = $(this),
+                countTo = $this.attr('data-count');
+            $({
+                countNum: $this.text()
 
-                    {
-                        delay: 0,
-                        duration: 2000,
-                        // easing: 'swing',
-                        step: function () {
-                            $this.text(Math.floor(this.countNum));
-                        },
-                        complete: function () {
-                            $this.text(this.countNum);
-                            //alert('finished');
-                        }
+            }).animate({
+                countNum: countTo
 
-                    });
-            });
-            counted = 1;
-        }
+            },
+
+                {
+                    delay: 50,
+                    duration: 1500,
+                    easing: 'linear',
+                    step: function () {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function () {
+                        $this.text(this.countNum);
+                    }
+
+                });
+        });
 
     });
 
@@ -94,15 +90,15 @@ window.addEventListener("scroll", animatation);
 // Image slide show
 let current = 0,
     main = document.getElementById('mainSlider')
-    slides = document.querySelectorAll('.slider');
-    slideImg = document.querySelectorAll('.overlay');
+slides = document.querySelectorAll('.slider');
+slideImg = document.querySelectorAll('.overlay');
 
 function slideShow() {
     for (let i = 0; i < slides.length; i++) {
         slides[i].classList.add('hidden')
         slides[i].classList.remove('visible')
 
-        for(let j =0; j<slideImg.length; j++){
+        for (let j = 0; j < slideImg.length; j++) {
             slides[i].classList.add('hidden')
             slides[i].classList.remove('visible')
         }
@@ -120,7 +116,7 @@ main.addEventListener("wheel", slideShow)
 
 
 let mobile = window.matchMedia('(max-width:767px)');
-if(mobile.matches){
+if (mobile.matches) {
     main.removeEventListener("wheel", slideShow);
     // alert("slider event remove");
 }

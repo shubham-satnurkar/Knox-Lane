@@ -12,6 +12,7 @@
     scroll-behavior: smooth;
 }
 
+body.overflow{overflow: hidden;}
 
 .wrapper {
     overflow: hidden;
@@ -123,6 +124,8 @@
     text-decoration: none;
     font-family: sans-serif;
     letter-spacing: 3px;
+    position: relative;
+    z-index: 10000;
 }
 
 .header .navbar .contact-menu {
