@@ -1497,11 +1497,11 @@ footer .container {
     }
 
     #collapseMenu {
-        padding: 200px 50px 50px;
+        padding: 100px 60px 50px;
     }
 
     #collapseMenu .navbar-nav .investor-login {
-        margin-top: 0;
+        margin-top: 50px;
     }
 
     #collapseMenu.show .nav-item {
@@ -1509,8 +1509,8 @@ footer .container {
     }
 
     #collapseMenu .navbar-nav .nav-item .nav-link {
-        font-size: 2rem;
-        line-height: inherit;
+        font-size: 2.5rem;
+        line-height: 50px;
     }
 
     .learn-more,
@@ -1672,6 +1672,22 @@ footer .container {
     .learn-more .btn .btn-learn::after {
         width: 18px;
         height: 20px;
+    }
+    #collapseMenu {
+        padding: 100px 30px 50px;
+    }
+
+    #collapseMenu .navbar-nav .investor-login {
+        margin-top: 50px;
+    }
+
+    #collapseMenu.show .nav-item {
+        height: 50px;
+    }
+
+    #collapseMenu .navbar-nav .nav-item .nav-link {
+        font-size: 2rem;
+        line-height: 50px;
     }
 }
 

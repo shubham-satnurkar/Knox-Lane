@@ -122,5 +122,5 @@ main.addEventListener("wheel", slideShow)
 let mobile = window.matchMedia('(max-width:767px)');
 if(mobile.matches){
     main.removeEventListener("wheel", slideShow);
-    alert("slider event remove");
+    // alert("slider event remove");
 }
